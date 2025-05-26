@@ -150,43 +150,39 @@ export default function Home() {
         {/* Main content (right half on large screens) */}
         <main className="flex-1 w-full lg:w-3/5 max-w-4xl mx-auto px-4 py-8 lg:ml-[40vw] lg:px-16 lg:py-12 transition-all duration-300">
           {/* Experience Section */}
-          <section
-            id="experience"
-            className="mb-16 bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6"
-          >
-            <h2 className="text-2xl font-bold mb-4 text-amber-400">
+          <section id="experience" className="mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-amber-400">
               Experience
             </h2>
             <ul className="space-y-6">
               {rabin.experiences?.map((exp: any) => (
-                <li
-                  key={exp.company + exp.startDate}
-                  className="flex gap-4 items-start"
-                >
-                  {exp.imagePath && (
-                    <img
-                      src={exp.imagePath}
-                      alt={exp.company}
-                      className="w-12 h-12 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
-                    />
-                  )}
-                  <div>
-                    <div className="font-semibold text-lg text-slate-100">
-                      {exp.position}{" "}
-                      <span className="text-slate-400 font-normal">
-                        @ {exp.company}
-                      </span>
+                <li key={exp.company + exp.startDate}>
+                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-start">
+                    {exp.imagePath && (
+                      <img
+                        src={exp.imagePath}
+                        alt={exp.company}
+                        className="w-12 h-12 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                      />
+                    )}
+                    <div>
+                      <div className="font-semibold text-lg text-slate-100">
+                        {exp.position}{" "}
+                        <span className="text-slate-400 font-normal">
+                          @ {exp.company}
+                        </span>
+                      </div>
+                      <div className="text-sm text-slate-400 mb-1">
+                        {exp.startDate} – {exp.endDate} | {exp.location}
+                      </div>
+                      <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
+                        {exp.description
+                          .split("\n")
+                          .map((point: string, idx: number) => (
+                            <li key={idx}>{point}</li>
+                          ))}
+                      </ul>
                     </div>
-                    <div className="text-sm text-slate-400 mb-1">
-                      {exp.startDate} – {exp.endDate} | {exp.location}
-                    </div>
-                    <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
-                      {exp.description
-                        .split("\n")
-                        .map((point: string, idx: number) => (
-                          <li key={idx}>{point}</li>
-                        ))}
-                    </ul>
                   </div>
                 </li>
               ))}
@@ -194,32 +190,28 @@ export default function Home() {
           </section>
 
           {/* Education Section */}
-          <section
-            id="education"
-            className="mb-16 bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6"
-          >
-            <h2 className="text-2xl font-bold mb-4 text-amber-400">
+          <section id="education" className="mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-amber-400">
               Education
             </h2>
             <ul className="space-y-6">
               {rabin.educations?.map((edu: any) => (
-                <li
-                  key={edu.school + edu.acheivment}
-                  className="flex gap-4 items-center"
-                >
-                  {edu.imagePath && (
-                    <img
-                      src={edu.imagePath}
-                      alt={edu.school}
-                      className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
-                    />
-                  )}
-                  <div>
-                    <div className="font-semibold text-slate-100">
-                      {edu.school}
-                    </div>
-                    <div className="text-sm text-slate-400">
-                      {edu.acheivment} ({edu.endDate})
+                <li key={edu.school + edu.acheivment}>
+                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center">
+                    {edu.imagePath && (
+                      <img
+                        src={edu.imagePath}
+                        alt={edu.school}
+                        className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                      />
+                    )}
+                    <div>
+                      <div className="font-semibold text-slate-100">
+                        {edu.school}
+                      </div>
+                      <div className="text-sm text-slate-400">
+                        {edu.acheivment} ({edu.endDate})
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -228,27 +220,26 @@ export default function Home() {
           </section>
 
           {/* Projects Section */}
-          <section
-            id="projects"
-            className="mb-16 bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6"
-          >
-            <h2 className="text-2xl font-bold mb-4 text-amber-400">Projects</h2>
+          <section id="projects" className="mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-amber-400">Projects</h2>
             <ul className="space-y-6">
               {rabin.projects?.map((proj: any) => (
-                <li key={proj.name} className="flex gap-4 items-center">
-                  {proj.imagePath && (
-                    <img
-                      src={proj.imagePath}
-                      alt={proj.name}
-                      className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
-                    />
-                  )}
-                  <div>
-                    <div className="font-semibold text-slate-100">
-                      {proj.name}
-                    </div>
-                    <div className="text-sm text-slate-300">
-                      {proj.description}
+                <li key={proj.name}>
+                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center">
+                    {proj.imagePath && (
+                      <img
+                        src={proj.imagePath}
+                        alt={proj.name}
+                        className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                      />
+                    )}
+                    <div>
+                      <div className="font-semibold text-slate-100">
+                        {proj.name}
+                      </div>
+                      <div className="text-sm text-slate-300">
+                        {proj.description}
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -257,29 +248,25 @@ export default function Home() {
           </section>
 
           {/* Tools Section */}
-          <section
-            id="tools"
-            className="mb-16 bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6"
-          >
-            <h2 className="text-2xl font-bold mb-4 text-amber-400">Tools</h2>
-            <ul className="flex flex-wrap gap-4">
+          <section id="tools" className="mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-amber-400">Tools</h2>
+            <ul className="flex flex-wrap gap-6">
               {rabin.tools?.map((tool: any) => (
-                <li
-                  key={tool.name + tool.usage}
-                  className="flex flex-col items-center w-24 bg-slate-800/20 hover:bg-slate-700/30 rounded-lg p-3 border border-slate-700/30 hover:border-slate-600/50 transition-all duration-200"
-                >
-                  {tool.iconPath && (
-                    <img
-                      src={tool.iconPath}
-                      alt={tool.name}
-                      className="w-10 h-10 object-contain mb-2"
-                    />
-                  )}
-                  <div className="font-semibold text-xs text-center text-slate-200">
-                    {tool.name}
-                  </div>
-                  <div className="text-xs text-slate-400 text-center">
-                    {tool.usage}
+                <li key={tool.name + tool.usage} className="w-32">
+                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-4 flex flex-col items-center">
+                    {tool.iconPath && (
+                      <img
+                        src={tool.iconPath}
+                        alt={tool.name}
+                        className="w-10 h-10 object-contain mb-2"
+                      />
+                    )}
+                    <div className="font-semibold text-xs text-center text-slate-200">
+                      {tool.name}
+                    </div>
+                    <div className="text-xs text-slate-400 text-center">
+                      {tool.usage}
+                    </div>
                   </div>
                 </li>
               ))}
