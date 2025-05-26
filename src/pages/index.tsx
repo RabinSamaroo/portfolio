@@ -2,7 +2,7 @@ import rabin from "../rabin";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-900 bg-gradient-to-br to-slate-900 via-slate-700 from-amber-200/40 via-20% text-slate-100">
+    <div className="min-h-screen flex flex-col font-sans bg-slate-900 bg-gradient-to-tl to-slate-900 via-slate-700 from-amber-300/50 via-20% text-slate-100">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
         <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-6 py-8 lg:py-12 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
