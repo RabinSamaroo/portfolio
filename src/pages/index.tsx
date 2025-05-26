@@ -2,7 +2,7 @@ import rabin from "../rabin";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-900 bg-gradient-to-tl to-slate-900 via-slate-700 from-amber-300/50 via-20% text-slate-100">
+    <div className="min-h-screen flex flex-col font-sans bg-slate-900 bg-gradient-to-tl to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
         <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-6 py-8 lg:py-12 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
@@ -157,12 +157,12 @@ export default function Home() {
             <ul className="space-y-6">
               {rabin.experiences?.map((exp: any) => (
                 <li key={exp.company + exp.startDate}>
-                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-start">
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-start transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
                     {exp.imagePath && (
                       <img
                         src={exp.imagePath}
                         alt={exp.company}
-                        className="w-12 h-12 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                        className="w-12 h-12 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
                       />
                     )}
                     <div>
@@ -197,12 +197,12 @@ export default function Home() {
             <ul className="space-y-6">
               {rabin.educations?.map((edu: any) => (
                 <li key={edu.school + edu.acheivment}>
-                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center">
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
                     {edu.imagePath && (
                       <img
                         src={edu.imagePath}
                         alt={edu.school}
-                        className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                        className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
                       />
                     )}
                     <div>
@@ -225,12 +225,12 @@ export default function Home() {
             <ul className="space-y-6">
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
-                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center">
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
                     {proj.imagePath && (
                       <img
                         src={proj.imagePath}
                         alt={proj.name}
-                        className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50"
+                        className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
                       />
                     )}
                     <div>
@@ -253,12 +253,12 @@ export default function Home() {
             <ul className="flex flex-wrap gap-6">
               {rabin.tools?.map((tool: any) => (
                 <li key={tool.name + tool.usage} className="w-32">
-                  <div className="bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-4 flex flex-col items-center">
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-4 flex flex-col items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-105 focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
                     {tool.iconPath && (
                       <img
                         src={tool.iconPath}
                         alt={tool.name}
-                        className="w-10 h-10 object-contain mb-2"
+                        className="w-10 h-10 object-contain mb-2 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6"
                       />
                     )}
                     <div className="font-semibold text-xs text-center text-slate-200">
