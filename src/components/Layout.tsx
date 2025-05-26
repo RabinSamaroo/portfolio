@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
-        <aside className="lg:w-1/2 w-full flex flex-col items-center justify-center px-8 py-8 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-foreground/10 bg-background z-10 shadow-none lg:shadow-xl">
+        <aside className="glass lg:w-1/2 w-full flex flex-col items-center justify-center px-8 py-8 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-foreground/10 z-10 shadow-none lg:shadow-xl transition-all duration-300">
           <div className="flex flex-col items-center lg:items-start w-full max-w-md mx-auto">
             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1 text-foreground">
               {rabin.firstName}{" "}
@@ -147,12 +147,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </aside>
         {/* Main content (right half on large screens) */}
-        <main className="flex-1 w-full lg:w-1/2 max-w-3xl mx-auto px-4 py-8 lg:ml-[50vw] lg:px-16 lg:py-12">
+        <main className="glass flex-1 w-full lg:w-1/2 max-w-3xl mx-auto px-4 py-8 lg:ml-[50vw] lg:px-16 lg:py-12 transition-all duration-300">
           {children}
         </main>
       </div>
       {/* Footer for mobile only */}
-      <footer className="w-full py-4 px-4 flex flex-col items-center border-t border-foreground/10 text-sm text-foreground/60 lg:hidden">
+      <footer className="glass w-full py-4 px-4 flex flex-col items-center border-t border-foreground/10 text-sm text-foreground/60 lg:hidden transition-all duration-300">
         <div className="flex gap-4 mb-2">
           {rabin.socials?.insagram && (
             <a

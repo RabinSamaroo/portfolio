@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
       {/* Experience Section */}
-      <section id="experience" className="mb-16">
-        <h2 className="text-2xl font-bold mb-4">Experience</h2>
+      <section id="experience" className="mb-16 glass p-6">
+        <h2 className="text-2xl font-bold mb-4 text-accent">Experience</h2>
         <ul className="space-y-6">
           {rabin.experiences?.map((exp: any) => (
             <li
@@ -30,9 +30,11 @@ export default function Home() {
                   {exp.startDate} – {exp.endDate} | {exp.location}
                 </div>
                 <ul className="list-disc pl-5 text-sm text-foreground/80 space-y-1">
-                  {exp.description.split("\n").map((point: string, idx: number) => (
-                    <li key={idx}>{point}</li>
-                  ))}
+                  {exp.description
+                    .split("\n")
+                    .map((point: string, idx: number) => (
+                      <li key={idx}>{point}</li>
+                    ))}
                 </ul>
               </div>
             </li>
@@ -41,8 +43,8 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="mb-16">
-        <h2 className="text-2xl font-bold mb-4">Education</h2>
+      <section id="education" className="mb-16 glass p-6">
+        <h2 className="text-2xl font-bold mb-4 text-accent">Education</h2>
         <ul className="space-y-6">
           {rabin.educations?.map((edu: any) => (
             <li
@@ -68,8 +70,8 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="mb-16">
-        <h2 className="text-2xl font-bold mb-4">Projects</h2>
+      <section id="projects" className="mb-16 glass p-6">
+        <h2 className="text-2xl font-bold mb-4 text-accent">Projects</h2>
         <ul className="space-y-6">
           {rabin.projects?.map((proj: any) => (
             <li key={proj.name} className="flex gap-4 items-center">
@@ -92,13 +94,13 @@ export default function Home() {
       </section>
 
       {/* Tools Section */}
-      <section id="tools" className="mb-16">
-        <h2 className="text-2xl font-bold mb-4">Tools</h2>
+      <section id="tools" className="mb-16 glass p-6">
+        <h2 className="text-2xl font-bold mb-4 text-accent">Tools</h2>
         <ul className="flex flex-wrap gap-4">
           {rabin.tools?.map((tool: any) => (
             <li
               key={tool.name + tool.usage}
-              className="flex flex-col items-center w-24"
+              className="flex flex-col items-center w-24 glass-hover transition-all duration-200"
             >
               {tool.iconPath && (
                 <img
