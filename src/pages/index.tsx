@@ -1,4 +1,10 @@
 import rabin from "../rabin";
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  MapPinIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
@@ -19,43 +25,37 @@ export default function Home() {
               </span>
             </h2>
             {/* About Section in Head */}
-            <div className="mb-6 w-full">
-              <p className="text-base leading-relaxed mb-3 text-slate-200 border-l-4 border-amber-400 pl-4 italic">
+            <div className="mb-8 w-full">
+              <p className="text-base leading-relaxed mb-4 text-slate-200 border-l-4 border-amber-400 pl-4 italic">
                 {rabin.summary}
               </p>
-              <div className="flex flex-col gap-1 text-xs text-slate-400 mb-3">
-                <span>
-                  <span className="font-semibold text-slate-200">Email:</span>{" "}
-                  <a
-                    href={`mailto:${rabin.contact.email}`}
-                    className="underline hover:text-amber-400 transition-colors"
-                  >
-                    {rabin.contact.email}
-                  </a>
-                </span>
-                <span>
-                  <span className="font-semibold text-slate-200">Phone:</span>{" "}
+              <div className="flex flex-wrap gap-4 text-base text-slate-400 mb-4 w-full">
+                <a
+                  href={`mailto:${rabin.contact.email}`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                >
+                  <EnvelopeIcon className="w-5 h-5 text-amber-400" />
+                  {rabin.contact.email}
+                </a>
+                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto">
+                  <PhoneIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.phone}
                 </span>
-                <span>
-                  <span className="font-semibold text-slate-200">
-                    Location:
-                  </span>{" "}
+                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto">
+                  <MapPinIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.location}
                 </span>
-                <span>
-                  <span className="font-semibold text-slate-200">Website:</span>{" "}
-                  <a
-                    href={rabin.contact.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-amber-400 transition-colors"
-                  >
-                    {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
-                  </a>
-                </span>
+                <a
+                  href={rabin.contact.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                >
+                  <GlobeAltIcon className="w-5 h-5 text-amber-400" />
+                  {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
+                </a>
               </div>
-              <div className="flex flex-wrap gap-2 text-xs mb-3">
+              <div className="flex flex-wrap gap-2 text-xs mb-4">
                 {rabin.languages.map(
                   (lang: { name: string; level: string }) => (
                     <span
@@ -68,7 +68,7 @@ export default function Home() {
                   )
                 )}
               </div>
-              <div className="flex flex-wrap gap-1 text-xs">
+              <div className="flex flex-wrap gap-1 text-xs mb-4">
                 {rabin.skills.map((skill: string) => (
                   <span
                     key={skill}
@@ -79,7 +79,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <nav className="flex gap-6 mb-8 lg:mb-0 text-lg font-medium">
+            <nav className="flex gap-6 mb-10 lg:mb-0 text-lg font-medium">
               <a
                 href="#experience"
                 className="hover:text-amber-400 transition-colors text-slate-300"
@@ -106,7 +106,7 @@ export default function Home() {
               </a>
             </nav>
           </div>
-          <div className="hidden lg:flex flex-col gap-4 items-start w-full max-w-md mx-auto mb-8">
+          <div className="hidden lg:flex flex-col gap-6 items-start w-full max-w-md mx-auto mb-8">
             <div className="flex gap-4">
               {rabin.socials?.insagram && (
                 <a
