@@ -3,7 +3,6 @@ import rabin from "../rabin";
 export default function Home() {
   return (
     <>
-
       {/* Experience Section */}
       <section id="experience" className="mb-16">
         <h2 className="text-2xl font-bold mb-4">Experience</h2>
