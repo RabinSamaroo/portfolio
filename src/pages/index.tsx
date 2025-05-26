@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
-        <aside className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 lg:w-1/2 w-full flex flex-col items-center justify-center px-8 py-8 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
+        <aside className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 lg:w-2/5 w-full flex flex-col items-center justify-center px-6 py-8 lg:py-12 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
           <div className="flex flex-col items-center lg:items-start w-full max-w-md mx-auto">
             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1 text-slate-100">
               {rabin.firstName}{" "}
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </aside>
         {/* Main content (right half on large screens) */}
-        <main className="bg-slate-900/30 backdrop-blur-xl border border-slate-800/30 flex-1 w-full lg:w-1/2 max-w-3xl mx-auto px-4 py-8 lg:ml-[50vw] lg:px-16 lg:py-12 transition-all duration-300">
+        <main className="backdrop-blur-xl flex-1 w-full lg:w-3/5 max-w-4xl mx-auto px-4 py-8 lg:ml-[40vw] lg:px-16 lg:py-12 transition-all duration-300">
           {/* Experience Section */}
           <section
             id="experience"
