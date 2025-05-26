@@ -9,10 +9,14 @@ export default function Home() {
           <div className="flex flex-col items-center lg:items-start w-full max-w-md mx-auto">
             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1 text-slate-100">
               {rabin.firstName}{" "}
-              <span className="text-amber-400">{rabin.lastName}</span>
+              <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+                {rabin.lastName}
+              </span>
             </h1>
             <h2 className="text-lg lg:text-xl font-semibold mb-4 text-slate-300">
-              {rabin.title}
+              <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+                {rabin.title}
+              </span>
             </h2>
             {/* About Section in Head */}
             <div className="mb-6 w-full">
@@ -151,13 +155,13 @@ export default function Home() {
         <main className="flex-1 w-full lg:w-3/5 max-w-4xl mx-auto px-4 py-8 lg:ml-[40vw] lg:px-16 lg:py-12 transition-all duration-300">
           {/* Experience Section */}
           <section id="experience" className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Experience
             </h2>
             <ul className="space-y-6">
               {rabin.experiences?.map((exp: any) => (
                 <li key={exp.company + exp.startDate}>
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-start transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-start transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-400/40 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
                     {exp.imagePath && (
                       <img
                         src={exp.imagePath}
@@ -191,7 +195,7 @@ export default function Home() {
 
           {/* Education Section */}
           <section id="education" className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Education
             </h2>
             <ul className="space-y-6">
@@ -221,7 +225,9 @@ export default function Home() {
 
           {/* Projects Section */}
           <section id="projects" className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">Projects</h2>
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+              Projects
+            </h2>
             <ul className="space-y-6">
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
@@ -249,7 +255,9 @@ export default function Home() {
 
           {/* Tools Section */}
           <section id="tools" className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">Tools</h2>
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+              Tools
+            </h2>
             <ul className="flex flex-wrap gap-6">
               {rabin.tools?.map((tool: any) => (
                 <li key={tool.name + tool.usage} className="w-32">
@@ -319,7 +327,10 @@ export default function Home() {
           )}
         </div>
         <span className="text-slate-400">
-          &copy; {new Date().getFullYear()} {rabin.firstName} {rabin.lastName}
+          &copy; {new Date().getFullYear()}{" "}
+          <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+            {rabin.firstName} {rabin.lastName}
+          </span>
         </span>
       </footer>
     </div>
