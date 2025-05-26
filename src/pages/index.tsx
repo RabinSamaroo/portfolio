@@ -29,9 +29,11 @@ export default function Home() {
                 <div className="text-sm text-foreground/60 mb-1">
                   {exp.startDate} – {exp.endDate} | {exp.location}
                 </div>
-                <div className="text-sm text-foreground/80">
-                  {exp.description}
-                </div>
+                <ul className="list-disc pl-5 text-sm text-foreground/80 space-y-1">
+                  {exp.description.split("\n").map((point: string, idx: number) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}
