@@ -5,14 +5,47 @@ import {
   MapPinIcon,
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
+import { useEffect, useRef, useState } from "react";
 
 // Card hover effect classes
 const cardHover =
   "transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br hover:from-amber-400/10 hover:to-orange-700/10 hover:border-amber-400 hover:text-amber-200 focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-400/10 focus-within:to-orange-700/10 focus-within:border-amber-400";
 
+// Section definitions for nav and scroll tracking
+const sections = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "education", label: "Education" },
+];
+
 export default function Home() {
+  // Track which section is currently in view
+  const [activeSection, setActiveSection] = useState(sections[0].id);
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  useEffect(() => {
+    function onScroll() {
+      const scrollY = window.scrollY;
+      let current = sections[0].id;
+      for (const section of sections) {
+        const el = sectionRefs.current[section.id];
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 140;
+          if (scrollY >= top) {
+            current = section.id;
+          }
+        }
+      }
+      setActiveSection(current);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-tl to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
+    <div className="min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-br to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
         <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-8 py-12 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
@@ -87,35 +120,42 @@ export default function Home() {
               </div>
             </div>
             <nav className="flex gap-8 mb-14 lg:mb-0 text-xl font-medium">
-              <a
-                href="#experience"
-                className="hover:text-amber-400 transition-colors text-slate-300"
-              >
-                Experience
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-amber-400 transition-colors text-slate-300"
-              >
-                Projects
-              </a>
-              <a
-                href="#education"
-                className="hover:text-amber-400 transition-colors text-slate-300"
-              >
-                Education
-              </a>
+              {sections.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className={`transition-colors ${
+                    activeSection === section.id
+                      ? "text-amber-400 font-bold"
+                      : "text-slate-300"
+                  } hover:text-amber-400`}
+                >
+                  {section.label}
+                </a>
+              ))}
             </nav>
           </div>
         </aside>
         {/* Main content (right half on large screens) */}
         <main className="flex-1 w-full lg:w-3/5 max-w-4xl mx-auto px-6 py-12 lg:ml-[40vw] lg:px-20 lg:py-16 transition-all duration-300 text-lg">
           {/* About Section */}
-          <section className="mb-12">
+          <section
+            id="about"
+            className="mb-12"
+            ref={(el) => {
+              sectionRefs.current["about"] = el;
+            }}
+          >
             <div className="p-8 text-xl text-slate-200">{rabin.summary}</div>
           </section>
           {/* Experience Section */}
-          <section id="experience" className="mb-12">
+          <section
+            id="experience"
+            className="mb-12"
+            ref={(el) => {
+              sectionRefs.current["experience"] = el;
+            }}
+          >
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Experience
             </h2>
@@ -157,7 +197,13 @@ export default function Home() {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="mb-12">
+          <section
+            id="projects"
+            className="mb-12"
+            ref={(el) => {
+              sectionRefs.current["projects"] = el;
+            }}
+          >
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Projects
             </h2>
@@ -189,7 +235,13 @@ export default function Home() {
           </section>
 
           {/* Education Section */}
-          <section id="education" className="mb-12">
+          <section
+            id="education"
+            className="mb-12"
+            ref={(el) => {
+              sectionRefs.current["education"] = el;
+            }}
+          >
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Education
             </h2>
