@@ -79,7 +79,7 @@ export default function Home() {
                 {rabin.skills.map((skill: string) => (
                   <span
                     key={skill}
-                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer mb-1"
+                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
                   >
                     {skill}
                   </span>
@@ -118,7 +118,9 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.experiences?.map((exp: any) => (
                 <li key={exp.company + exp.startDate}>
-                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-start text-xl ${cardHover}`}>
+                  <div
+                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-start text-xl ${cardHover}`}
+                  >
                     {exp.imagePath && (
                       <img
                         src={exp.imagePath}
@@ -158,7 +160,9 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
-                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}>
+                  <div
+                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}
+                  >
                     {proj.imagePath && (
                       <img
                         src={proj.imagePath}
@@ -188,7 +192,9 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.educations?.map((edu: any) => (
                 <li key={edu.school + edu.acheivment}>
-                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}>
+                  <div
+                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}
+                  >
                     {edu.imagePath && (
                       <img
                         src={edu.imagePath}
