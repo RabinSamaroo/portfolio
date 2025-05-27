@@ -48,25 +48,59 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-br to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
-        <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-8 py-12 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
+        <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-8 pt-12 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
           <div className="flex flex-col items-center lg:items-start w-full max-w-md mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight mb-2 text-slate-100">
+            <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight mb-2 text-slate-100 text-center lg:text-left">
               {rabin.firstName}{" "}
               <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
                 {rabin.lastName}
               </span>
             </h1>
-            <h2 className="text-xl lg:text-2xl font-semibold mb-6 text-slate-300">
+            <h2 className="text-xl lg:text-2xl font-semibold mb-6 text-slate-300 text-center lg:text-left">
               <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
                 {rabin.title}
               </span>
             </h2>
             {/* About Section in Head */}
             <div className="mb-10 w-full">
-              <p className="text-lg leading-relaxed mb-6 text-slate-200 border-l-4 border-amber-400 pl-4 italic">
+              <p className="text-lg leading-relaxed mb-6 text-slate-200 border-l-4 border-amber-400 pl-4 italic hidden lg:block">
                 {rabin.summary}
               </p>
-              <div className="flex flex-wrap gap-4 text-base text-slate-400 mb-6 w-full">
+              {/* Contact buttons: icon-only and horizontal on mobile, full on lg+ */}
+              {/* Mobile: icon-only, horizontal */}
+              <div className="flex flex-row gap-4 text-base text-slate-400 mb-6 w-full justify-center lg:hidden">
+                <a
+                  href={`mailto:${rabin.contact.email}`}
+                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  title={rabin.contact.email}
+                >
+                  <EnvelopeIcon className="w-5 h-5 text-amber-400" />
+                </a>
+                <a
+                  href={`tel:${rabin.contact.phone}`}
+                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  title={rabin.contact.phone}
+                >
+                  <PhoneIcon className="w-5 h-5 text-amber-400" />
+                </a>
+                <span
+                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-12 h-12 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                  title={rabin.contact.location}
+                >
+                  <MapPinIcon className="w-5 h-5 text-amber-400" />
+                </span>
+                <a
+                  href={rabin.contact.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  title={rabin.contact.websiteUrl}
+                >
+                  <GlobeAltIcon className="w-5 h-5 text-amber-400" />
+                </a>
+              </div>
+              {/* Desktop: original full buttons */}
+              <div className="hidden lg:flex flex-wrap gap-4 text-base text-slate-400 mb-6 w-full">
                 <a
                   href={`mailto:${rabin.contact.email}`}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
@@ -95,7 +129,8 @@ export default function Home() {
                   {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
                 </a>
               </div>
-              <div className="flex flex-wrap gap-3 text-xs mb-6">
+              {/* Languages and Skills: only on lg+ */}
+              <div className="hidden lg:flex flex-wrap gap-3 text-xs mb-6">
                 {rabin.languages.map(
                   (lang: { name: string; level: string }) => (
                     <span
@@ -108,7 +143,7 @@ export default function Home() {
                   )
                 )}
               </div>
-              <div className="flex flex-wrap gap-2 text-xs mb-6">
+              <div className="hidden lg:flex flex-wrap gap-2 text-xs mb-6">
                 {rabin.skills.map((skill: string) => (
                   <span
                     key={skill}
@@ -119,7 +154,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <nav className="flex gap-8 mb-14 lg:mb-0 text-xl font-medium">
+            {/* Nav only on large screens */}
+            <nav className="hidden lg:flex gap-8 mb-14 lg:mb-0 text-xl font-medium">
               {sections.map((section) => (
                 <a
                   key={section.id}
@@ -148,6 +184,35 @@ export default function Home() {
           >
             <div className="p-8 text-xl text-slate-200">{rabin.summary}</div>
           </section>
+          {/* Sidebar content below about section on mobile */}
+          <div className="lg:hidden flex flex-col items-center w-full">
+            <div className="mb-10 w-full">
+              <div className="flex flex-wrap gap-3 text-xs mb-6">
+                {rabin.languages.map(
+                  (lang: { name: string; level: string }) => (
+                    <span
+                      key={lang.name}
+                      className="bg-slate-800/60 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-200 border border-slate-700/50 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                    >
+                      {lang.name}{" "}
+                      <span className="text-slate-400">({lang.level})</span>
+                    </span>
+                  )
+                )}
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs mb-6">
+                {rabin.skills.map((skill: string) => (
+                  <span
+                    key={skill}
+                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            {/* Nav is hidden on mobile */}
+          </div>
           {/* Experience Section */}
           <section
             id="experience"
