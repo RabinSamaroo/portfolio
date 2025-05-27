@@ -101,12 +101,7 @@ export default function Home() {
               >
                 Education
               </a>
-              <a
-                href="#tools"
-                className="hover:text-amber-400 transition-colors text-slate-300"
-              >
-                Tools
-              </a>
+              {/* Removed Tools nav link */}
             </nav>
           </div>
           <div className="hidden lg:flex flex-col gap-6 items-start w-full max-w-md mx-auto mb-8">
@@ -196,36 +191,6 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Education Section */}
-          <section id="education" className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
-              Education
-            </h2>
-            <ul className="space-y-6">
-              {rabin.educations?.map((edu: any) => (
-                <li key={edu.school + edu.acheivment}>
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
-                    {edu.imagePath && (
-                      <img
-                        src={edu.imagePath}
-                        alt={edu.school}
-                        className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
-                      />
-                    )}
-                    <div>
-                      <div className="font-semibold text-slate-100">
-                        {edu.school}
-                      </div>
-                      <div className="text-sm text-slate-400">
-                        {edu.acheivment} ({edu.endDate})
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
           {/* Projects Section */}
           <section id="projects" className="mb-8">
             <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
@@ -256,27 +221,29 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Tools Section */}
-          <section id="tools" className="mb-8">
+          {/* Education Section (moved to bottom) */}
+          <section id="education" className="mb-8">
             <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
-              Tools
+              Education
             </h2>
-            <ul className="flex flex-wrap gap-6">
-              {rabin.tools?.map((tool: any) => (
-                <li key={tool.name + tool.usage} className="w-32">
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-4 flex flex-col items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-105 focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
-                    {tool.iconPath && (
+            <ul className="space-y-6">
+              {rabin.educations?.map((edu: any) => (
+                <li key={edu.school + edu.acheivment}>
+                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-xl p-6 flex gap-4 items-center transition-all duration-300 shadow-md hover:shadow-2xl hover:scale-[1.025] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.025] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60">
+                    {edu.imagePath && (
                       <img
-                        src={tool.iconPath}
-                        alt={tool.name}
-                        className="w-10 h-10 object-contain mb-2 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6"
+                        src={edu.imagePath}
+                        alt={edu.school}
+                        className="w-10 h-10 object-contain rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group_hover:-rotate-3"
                       />
                     )}
-                    <div className="font-semibold text-xs text-center text-slate-200">
-                      {tool.name}
-                    </div>
-                    <div className="text-xs text-slate-400 text-center">
-                      {tool.usage}
+                    <div>
+                      <div className="font-semibold text-slate-100">
+                        {edu.school}
+                      </div>
+                      <div className="text-sm text-slate-400">
+                        {edu.acheivment} ({edu.endDate})
+                      </div>
                     </div>
                   </div>
                 </li>
