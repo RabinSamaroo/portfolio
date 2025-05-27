@@ -58,11 +58,24 @@ export default function Home() {
                   {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
                 </a>
               </div>
+              <div className="flex flex-wrap gap-3 text-xs mb-6">
+                {rabin.languages.map(
+                  (lang: { name: string; level: string }) => (
+                    <span
+                      key={lang.name}
+                      className="bg-slate-800/60 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-200 border border-slate-700/50 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                    >
+                      {lang.name}{" "}
+                      <span className="text-slate-400">({lang.level})</span>
+                    </span>
+                  )
+                )}
+              </div>
               <div className="flex flex-wrap gap-2 text-xs mb-6">
                 {rabin.skills.map((skill: string) => (
                   <span
                     key={skill}
-                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40"
+                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer mb-1"
                   >
                     {skill}
                   </span>
