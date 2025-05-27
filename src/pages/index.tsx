@@ -159,7 +159,7 @@ export default function Home() {
                       <img
                         src={proj.imagePath}
                         alt={proj.name}
-                        className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
+                        className="w-14 h-14 object-cover rounded-lg bg-slate-800/60 p-2 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group_hover:rotate-2"
                       />
                     )}
                     <div>
@@ -205,6 +205,73 @@ export default function Home() {
               ))}
             </ul>
           </section>
+
+          {/* Footer note */}
+          <div className="mt-36 pb-8 text-center text-sm text-slate-400 flex flex-col items-center">
+            <span>
+              Loosely designed in{" "}
+              <a
+                href="https://figma.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Figma
+              </a>{" "}
+              and coded in{" "}
+              <a
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Visual Studio Code
+              </a>{" "}
+              by yours truly.
+            </span>
+            <span>
+              Built with{" "}
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Next.js
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Tailwind CSS
+              </a>
+              , deployed with{" "}
+              <a
+                href="https://vercel.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Vercel
+              </a>
+              .
+            </span>
+            <span>
+              All text is set in the{" "}
+              <a
+                href="https://rsms.me/inter/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-400"
+              >
+                Inter
+              </a>{" "}
+              typeface.
+            </span>
+          </div>
         </main>
       </div>
     </div>
