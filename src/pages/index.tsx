@@ -282,7 +282,7 @@ export default function Home() {
                       <img
                         src={proj.imagePath}
                         alt={proj.name}
-                        className="w-20 h-20 object-cover rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group_hover:rotate-2"
+                        className="w-20 h-20 object-cover rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
                       />
                     )}
                     <div>
@@ -312,7 +312,7 @@ export default function Home() {
             </h2>
             <ul className="space-y-8">
               {rabin.educations?.map((edu: any) => (
-                <li key={edu.school + edu.acheivment}>
+                <li key={edu.school + edu.achievement}>
                   <div
                     className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}
                   >
@@ -320,7 +320,7 @@ export default function Home() {
                       <img
                         src={edu.imagePath}
                         alt={edu.school}
-                        className="w-14 h-14 object-contain rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group_hover:-rotate-3"
+                        className="w-14 h-14 object-contain rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
                       />
                     )}
                     <div>
@@ -328,7 +328,7 @@ export default function Home() {
                         {edu.school}
                       </div>
                       <div className="text-sm text-slate-400">
-                        {edu.acheivment} ({edu.endDate})
+                        {edu.achievement} ({edu.endDate})
                       </div>
                     </div>
                   </div>

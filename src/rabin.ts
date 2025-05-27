@@ -90,7 +90,7 @@ const rabin = {
   educations: [
     {
       school: "Ryerson University",
-      acheivment: "Honours Bachelor of Science, Computer Science",
+      achievement: "Honours Bachelor of Science, Computer Science",
       endDate: "2022",
       imagePath: "",
     },
