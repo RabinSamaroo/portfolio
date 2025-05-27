@@ -280,7 +280,7 @@ export default function Home() {
                 href="https://figma.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Figma
               </a>{" "}
@@ -289,7 +289,7 @@ export default function Home() {
                 href="https://code.visualstudio.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Visual Studio Code
               </a>{" "}
@@ -301,7 +301,7 @@ export default function Home() {
                 href="https://nextjs.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Next.js
               </a>{" "}
@@ -310,7 +310,7 @@ export default function Home() {
                 href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Tailwind CSS
               </a>
@@ -319,7 +319,7 @@ export default function Home() {
                 href="https://vercel.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Vercel
               </a>
@@ -331,7 +331,7 @@ export default function Home() {
                 href="https://rsms.me/inter/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-amber-400"
+                className="font-bold hover:text-amber-400"
               >
                 Inter
               </a>{" "}
