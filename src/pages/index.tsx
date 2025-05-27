@@ -225,8 +225,8 @@ export default function Home() {
               Experience
             </h2>
             <ul className="space-y-8">
-              {rabin.experiences?.map((exp: any) => (
-                <li key={exp.company + exp.startDate}>
+              {rabin.experiences?.map((exp: any, idx: number) => (
+                <li key={exp.company + exp.startDate + idx}>
                   <div
                     className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-start text-xl ${cardHover}`}
                   >
