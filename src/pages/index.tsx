@@ -6,6 +6,10 @@ import {
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
 
+// Card hover effect classes
+const cardHover =
+  "transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br hover:from-amber-400/10 hover:to-orange-700/10 hover:border-amber-400 hover:text-amber-200 focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-400/10 focus-within:to-orange-700/10 focus-within:border-amber-400";
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-tl to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
@@ -32,19 +36,19 @@ export default function Home() {
               <div className="flex flex-wrap gap-5 text-lg text-slate-400 mb-6 w-full">
                 <a
                   href={`mailto:${rabin.contact.email}`}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <EnvelopeIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.email}
                 </a>
                 <a
                   href={`tel:${rabin.contact.phone}`}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <PhoneIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.phone}
                 </a>
-                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto">
+                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer">
                   <MapPinIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.location}
                 </span>
@@ -52,7 +56,7 @@ export default function Home() {
                   href={rabin.contact.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <GlobeAltIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
@@ -114,7 +118,7 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.experiences?.map((exp: any) => (
                 <li key={exp.company + exp.startDate}>
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-start transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-400/40 focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60 text-xl">
+                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-start text-xl ${cardHover}`}>
                     {exp.imagePath && (
                       <img
                         src={exp.imagePath}
@@ -154,7 +158,7 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60 text-xl">
+                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}>
                     {proj.imagePath && (
                       <img
                         src={proj.imagePath}
@@ -184,7 +188,7 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.educations?.map((edu: any) => (
                 <li key={edu.school + edu.acheivment}>
-                  <div className="group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br hover:from-amber-100/10 hover:to-slate-800/70 hover:border-amber-300/60 focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br focus-within:from-amber-100/10 focus-within:to-slate-800/70 focus-within:border-amber-300/60 text-xl">
+                  <div className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}>
                     {edu.imagePath && (
                       <img
                         src={edu.imagePath}
