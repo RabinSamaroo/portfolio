@@ -110,6 +110,10 @@ export default function Home() {
         </aside>
         {/* Main content (right half on large screens) */}
         <main className="flex-1 w-full lg:w-3/5 max-w-4xl mx-auto px-6 py-12 lg:ml-[40vw] lg:px-20 lg:py-16 transition-all duration-300 text-lg">
+          {/* About Section */}
+          <section className="mb-12">
+            <div className="p-8 text-xl text-slate-200">{rabin.summary}</div>
+          </section>
           {/* Experience Section */}
           <section id="experience" className="mb-12">
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
