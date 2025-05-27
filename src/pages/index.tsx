@@ -101,52 +101,7 @@ export default function Home() {
               >
                 Education
               </a>
-              {/* Removed Tools nav link */}
             </nav>
-          </div>
-          <div className="hidden lg:flex flex-col gap-6 items-start w-full max-w-md mx-auto mb-8">
-            <div className="flex gap-4">
-              {rabin.socials?.insagram && (
-                <a
-                  href={rabin.socials.insagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-400 transition-colors text-slate-300"
-                >
-                  Instagram
-                </a>
-              )}
-              {rabin.socials?.twitter && (
-                <a
-                  href={rabin.socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-400 transition-colors text-slate-300"
-                >
-                  Twitter
-                </a>
-              )}
-              {rabin.socials?.dribbble && (
-                <a
-                  href={rabin.socials.dribbble}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-400 transition-colors text-slate-300"
-                >
-                  Dribbble
-                </a>
-              )}
-              {rabin.socials?.linkedin && (
-                <a
-                  href={rabin.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-400 transition-colors text-slate-300"
-                >
-                  LinkedIn
-                </a>
-              )}
-            </div>
           </div>
         </aside>
         {/* Main content (right half on large screens) */}
@@ -221,7 +176,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Education Section (moved to bottom) */}
+          {/* Education Section */}
           <section id="education" className="mb-8">
             <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
               Education
@@ -252,57 +207,6 @@ export default function Home() {
           </section>
         </main>
       </div>
-      {/* Footer for mobile only */}
-      <footer className="bg-slate-900/50 backdrop-blur-xl w-full py-4 px-4 flex flex-col items-center border-t border-slate-700/40 text-sm text-slate-400 lg:hidden transition-all duration-300">
-        <div className="flex gap-4 mb-2">
-          {rabin.socials?.insagram && (
-            <a
-              href={rabin.socials.insagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
-            >
-              Instagram
-            </a>
-          )}
-          {rabin.socials?.twitter && (
-            <a
-              href={rabin.socials.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
-            >
-              Twitter
-            </a>
-          )}
-          {rabin.socials?.dribbble && (
-            <a
-              href={rabin.socials.dribbble}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
-            >
-              Dribbble
-            </a>
-          )}
-          {rabin.socials?.linkedin && (
-            <a
-              href={rabin.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
-            >
-              LinkedIn
-            </a>
-          )}
-        </div>
-        <span className="text-slate-400">
-          &copy; {new Date().getFullYear()}{" "}
-          <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
-            {rabin.firstName} {rabin.lastName}
-          </span>
-        </span>
-      </footer>
     </div>
   );
 }
