@@ -14,11 +14,7 @@ const rabin = {
     dribbble: "https://www.dribbble.com",
     linkedin: "https://www.linkedin.com",
   },
-  languages: [
-    { name: "English", level: "Native" },
-    { name: "French", level: "Fluent" },
-    { name: "Spanish", level: "Intermediate" },
-  ],
+  languages: [{ name: "English", level: "Native" }],
   skills: [
     "TypeScript",
     "Web Design",
