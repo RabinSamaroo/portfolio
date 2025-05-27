@@ -37,10 +37,13 @@ export default function Home() {
                   <EnvelopeIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.email}
                 </a>
-                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto">
+                <a
+                  href={`tel:${rabin.contact.phone}`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-slate-800/80 hover:border-amber-400 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                >
                   <PhoneIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.phone}
-                </span>
+                </a>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto">
                   <MapPinIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.location}
