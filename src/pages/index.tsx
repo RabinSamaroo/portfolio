@@ -4,7 +4,7 @@ import {
   PhoneIcon,
   MapPinIcon,
   GlobeAltIcon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
 
 // Card hover effect classes
