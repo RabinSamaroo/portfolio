@@ -66,22 +66,22 @@ export default function Home() {
               <p className="text-lg leading-relaxed mb-6 text-slate-200 border-l-4 border-amber-400 pl-4 italic">
                 {rabin.summary}
               </p>
-              <div className="flex flex-wrap gap-5 text-lg text-slate-400 mb-6 w-full">
+              <div className="flex flex-wrap gap-4 text-base text-slate-400 mb-6 w-full">
                 <a
                   href={`mailto:${rabin.contact.email}`}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <EnvelopeIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.email}
                 </a>
                 <a
                   href={`tel:${rabin.contact.phone}`}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <PhoneIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.phone}
                 </a>
-                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer">
+                <span className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer">
                   <MapPinIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.location}
                 </span>
@@ -89,7 +89,7 @@ export default function Home() {
                   href={rabin.contact.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
                 >
                   <GlobeAltIcon className="w-5 h-5 text-amber-400" />
                   {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
