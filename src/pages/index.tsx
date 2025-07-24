@@ -285,7 +285,56 @@ export default function Home() {
               sectionRefs.current["about"] = el;
             }}
           >
-            <div className="p-8 text-xl text-slate-200">{rabin.summary}</div>
+            <div className="p-8 text-xl text-slate-200">
+              <span className={`${theme.accent} font-semibold`}>
+                Senior Full-Stack Developer
+              </span>{" "}
+              with{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                5+ years of experience
+              </span>{" "}
+              leading{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                high-performance teams
+              </span>{" "}
+              and architecting{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                scalable enterprise solutions
+              </span>
+              . Proven track record of delivering{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                mission-critical applications
+              </span>
+              , optimizing{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                system performance
+              </span>
+              , and driving{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                technical innovation
+              </span>
+              . Expertise in modern{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                JavaScript/TypeScript ecosystems
+              </span>
+              ,{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                cloud infrastructure
+              </span>
+              , and{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                agile methodologies
+              </span>{" "}
+              with a passion for{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                mentoring developers
+              </span>{" "}
+              and building{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                robust, maintainable codebases
+              </span>
+              .
+            </div>
           </section>
           {/* Sidebar content below about section on mobile */}
           <div className="lg:hidden flex flex-col items-center w-full">
