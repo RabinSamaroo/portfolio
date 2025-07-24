@@ -455,7 +455,7 @@ export default function Home() {
                     className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover}`}
                   >
                     {proj.imagePath && (
-                      <div className="w-1/3 h-42 flex-shrink-0">
+                      <div className="w-1/3 flex-shrink-0">
                         <img
                           src={proj.imagePath}
                           alt={proj.name}

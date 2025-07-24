@@ -112,25 +112,16 @@ const rabin = {
   ],
   projects: [
     {
-      name: "Enterprise Data Pipeline Architecture",
+      name: "Canada's Top 100 Employers Platform",
       description:
-        "Led the design and implementation of a scalable microservices architecture handling 10M+ daily requests, utilizing Docker, Kubernetes, and AWS services with 99.9% uptime.",
-      imagePath:
-        "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+        "Engineered a comprehensive employer recognition platform serving Canada's premier workplace awards program. Built scalable web infrastructure supporting thousands of employer applications, advanced search and filtering systems, and automated content management workflows for multiple award categories.",
+      imagePath: "https://static.eluta.ca/logos/2025_7_reverse_en.svg",
     },
     {
-      name: "Real-Time Analytics Dashboard",
+      name: "Eluta.ca Job Search Engine",
       description:
-        "Architected a comprehensive analytics platform using React, TypeScript, and GraphQL, featuring real-time data visualization and advanced filtering capabilities for executive decision-making.",
-      imagePath:
-        "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      name: "AI-Powered Code Review System",
-      description:
-        "Developed an intelligent code review automation tool using Python and machine learning algorithms, reducing review time by 60% while maintaining code quality standards.",
-      imagePath:
-        "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+        "Developed a comprehensive job search platform using full-stack Python architecture with extensive web scraping infrastructure. Implemented automated data collection systems processing thousands of job postings daily from multiple sources, advanced search algorithms, and real-time job aggregation pipelines with robust error handling and data validation.",
+      imagePath: "https://www.eluta.ca/++resource++img/eluta_homepage_logo.png",
     },
   ],
 };
