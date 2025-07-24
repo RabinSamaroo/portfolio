@@ -455,7 +455,7 @@ export default function Home() {
                     className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover}`}
                   >
                     {proj.imagePath && (
-                      <div className="w-1/3 h-48 flex-shrink-0">
+                      <div className="w-1/3 h-42 flex-shrink-0">
                         <img
                           src={proj.imagePath}
                           alt={proj.name}
@@ -593,21 +593,6 @@ export default function Home() {
                 Vercel
               </a>
               .
-            </span>
-            <span>
-              All text is set in the{" "}
-              <a
-                href="https://rsms.me/inter/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`font-bold hover:${theme.accent.replace(
-                  "text-",
-                  ""
-                )}`}
-              >
-                Inter
-              </a>{" "}
-              typeface.
             </span>
           </div>
         </main>
