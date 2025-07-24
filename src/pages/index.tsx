@@ -165,7 +165,7 @@ export default function Home() {
               <p
                 className={`text-lg leading-relaxed mb-6 text-slate-200 border-l-4 ${theme.border} pl-4 italic hidden lg:block`}
               >
-                {rabin.summary}
+                {rabin.quote}
               </p>
               {/* Contact buttons: icon-only and horizontal on mobile, full on lg+ */}
               {/* Mobile: icon-only, horizontal */}

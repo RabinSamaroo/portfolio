@@ -1,7 +1,7 @@
 const rabin = {
   firstName: "Rabin",
   lastName: "Samaroo",
-  title: "Software Engineer",
+  title: "Full-Stack Developer & Technical Lead",
   contact: {
     email: "r1samaroo@ryerson.ca",
     phone: "647-998-1462",
@@ -17,29 +17,31 @@ const rabin = {
   languages: [{ name: "English", level: "Native" }],
   skills: [
     "TypeScript",
-    "Web Design",
-    "Mobile Design",
-    "User Experience",
-    "Wireframing",
-    "Prototyping",
-    "Design System",
-    "Testing",
     "React",
     "Next.js",
-    "Chakra UI",
-    "Firebase",
     "Node.js",
-    "Express",
-    "MongoDB",
-    "PostgreSQL",
+    "Python",
     "GraphQL",
-    "Apollo",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
     "Docker",
+    "Kubernetes",
     "AWS",
-    "Git",
+    "GCP",
+    "Microservices",
+    "System Design",
+    "CI/CD",
+    "DevOps",
+    "Team Leadership",
+    "Agile/Scrum",
+    "Code Review",
+    "Mentoring",
+    "Architecture",
   ],
+  quote: "Premature abstraction is the root of all evil in software design.",
   summary:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc euismod, aliquam nisl nec, aliquam nisl. sed euismod nunc euismod, aliquam nisl nec, aliquam nisl. morbi euismod nunc euismod, aliquam nisl nec, aliquam nisl.",
+    "Senior Full-Stack Developer with 5+ years of experience leading high-performance teams and architecting scalable enterprise solutions. Proven track record of delivering mission-critical applications, optimizing system performance, and driving technical innovation. Expertise in modern JavaScript/TypeScript ecosystems, cloud infrastructure, and agile methodologies with a passion for mentoring developers and building robust, maintainable codebases.",
   experiences: [
     {
       company: "L3 Resources",
@@ -97,16 +99,23 @@ const rabin = {
   ],
   projects: [
     {
-      name: "Figma Design System",
+      name: "Enterprise Data Pipeline Architecture",
       description:
-        "Figma UI Kit and Design System targeting a wide variety of use cases",
+        "Led the design and implementation of a scalable microservices architecture handling 10M+ daily requests, utilizing Docker, Kubernetes, and AWS services with 99.9% uptime.",
       imagePath:
         "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     },
     {
-      name: "React User Interface",
+      name: "Real-Time Analytics Dashboard",
       description:
-        "Build a React UI with Chakra UI and Tailwind CSS for a design system",
+        "Architected a comprehensive analytics platform using React, TypeScript, and GraphQL, featuring real-time data visualization and advanced filtering capabilities for executive decision-making.",
+      imagePath:
+        "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      name: "AI-Powered Code Review System",
+      description:
+        "Developed an intelligent code review automation tool using Python and machine learning algorithms, reducing review time by 60% while maintaining code quality standards.",
       imagePath:
         "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     },
