@@ -4,6 +4,7 @@ import {
   PhoneIcon,
   MapPinIcon,
   GlobeAltIcon,
+  PaintBrushIcon,
 } from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
 
@@ -19,10 +20,63 @@ const sections = [
   { id: "education", label: "Education" },
 ];
 
+// Color themes
+const themes = {
+  amber: {
+    name: "Amber",
+    primary: "from-amber-400 to-orange-700",
+    accent: "text-amber-400",
+    border: "border-amber-400",
+    hover: "hover:border-amber-400 hover:text-amber-200",
+    gradient: "hover:from-amber-400/20 hover:to-orange-700/30",
+    glow: "hover:from-amber-400/10 hover:to-orange-700/10",
+    background: "from-amber-300/5 via-orange-400/8 to-slate-900",
+  },
+  blue: {
+    name: "Blue",
+    primary: "from-blue-400 to-cyan-600",
+    accent: "text-blue-400",
+    border: "border-blue-400",
+    hover: "hover:border-blue-400 hover:text-blue-200",
+    gradient: "hover:from-blue-400/20 hover:to-cyan-600/30",
+    glow: "hover:from-blue-400/10 hover:to-cyan-600/10",
+    background: "from-blue-400/5 via-cyan-400/8 to-slate-900",
+  },
+  purple: {
+    name: "Purple",
+    primary: "from-purple-400 to-pink-600",
+    accent: "text-purple-400",
+    border: "border-purple-400",
+    hover: "hover:border-purple-400 hover:text-purple-200",
+    gradient: "hover:from-purple-400/20 hover:to-pink-600/30",
+    glow: "hover:from-purple-400/10 hover:to-pink-600/10",
+    background: "from-purple-400/5 via-pink-400/8 to-slate-900",
+  },
+  green: {
+    name: "Green",
+    primary: "from-green-400 to-emerald-600",
+    accent: "text-green-400",
+    border: "border-green-400",
+    hover: "hover:border-green-400 hover:text-green-200",
+    gradient: "hover:from-green-400/20 hover:to-emerald-600/30",
+    glow: "hover:from-green-400/10 hover:to-emerald-600/10",
+    background: "from-green-400/5 via-emerald-400/8 to-slate-900",
+  },
+};
+
 export default function Home() {
   // Track which section is currently in view
   const [activeSection, setActiveSection] = useState(sections[0].id);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  // Theme state
+  const [currentTheme, setCurrentTheme] =
+    useState<keyof typeof themes>("amber");
+  const [showThemeMenu, setShowThemeMenu] = useState(false);
+  const theme = themes[currentTheme];
+
+  // Create dynamic card hover effect with current theme
+  const cardHover = `transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.035] hover:bg-gradient-to-br ${theme.glow} ${theme.hover} focus-within:scale-[1.035] focus-within:shadow-2xl focus-within:bg-gradient-to-br ${theme.glow} focus-within:${theme.border}`;
 
   useEffect(() => {
     function onScroll() {
@@ -45,25 +99,72 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-br to-slate-900 via-slate-700 from-amber-300/20 via-20% text-slate-100">
+    <div
+      className={`min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-br ${theme.background} via-20% text-slate-100`}
+    >
+      {/* Theme Selector */}
+      <div className="fixed top-4 right-4 z-50">
+        <div className="relative">
+          <button
+            onClick={() => setShowThemeMenu(!showThemeMenu)}
+            className={`flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/80 backdrop-blur-lg border border-slate-700/50 ${theme.hover} transition-all duration-200 shadow-lg`}
+            title="Change color theme"
+          >
+            <PaintBrushIcon className={`w-5 h-5 ${theme.accent}`} />
+          </button>
+          {showThemeMenu && (
+            <div className="absolute top-14 right-0 bg-slate-800/90 backdrop-blur-xl border border-slate-700/50 rounded-xl p-2 shadow-xl min-w-[120px]">
+              {Object.entries(themes).map(([key, themeOption]) => (
+                <button
+                  key={key}
+                  onClick={() => {
+                    setCurrentTheme(key as keyof typeof themes);
+                    setShowThemeMenu(false);
+                  }}
+                  className={`w-full text-left px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
+                    currentTheme === key
+                      ? `bg-gradient-to-r ${themeOption.primary} text-white`
+                      : `hover:bg-slate-700/50 text-slate-200 hover:${themeOption.border.replace(
+                          "border-",
+                          "text-"
+                        )}`
+                  }`}
+                >
+                  <div
+                    className={`w-3 h-3 rounded-full bg-gradient-to-r ${themeOption.primary}`}
+                  ></div>
+                  {themeOption.name}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Header (fixed on left for large screens) */}
       <div className="flex-1 flex flex-col lg:flex-row">
         <aside className="bg-slate-900/50 backdrop-blur-xl border lg:w-2/5 w-full flex flex-col items-center justify-center px-8 pt-12 lg:py-16 lg:fixed lg:h-full lg:justify-between border-b lg:border-b-0 lg:border-r border-slate-700/30 z-10 shadow-none lg:shadow-2xl lg:shadow-slate-950/50 transition-all duration-300">
           <div className="flex flex-col items-center lg:items-start w-full max-w-md mx-auto">
             <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight mb-2 text-slate-100 text-center lg:text-left">
               {rabin.firstName}{" "}
-              <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+              <span
+                className={`bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+              >
                 {rabin.lastName}
               </span>
             </h1>
             <h2 className="text-xl lg:text-2xl font-semibold mb-6 text-slate-300 text-center lg:text-left">
-              <span className="bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+              <span
+                className={`bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+              >
                 {rabin.title}
               </span>
             </h2>
             {/* About Section in Head */}
             <div className="mb-10 w-full">
-              <p className="text-lg leading-relaxed mb-6 text-slate-200 border-l-4 border-amber-400 pl-4 italic hidden lg:block">
+              <p
+                className={`text-lg leading-relaxed mb-6 text-slate-200 border-l-4 ${theme.border} pl-4 italic hidden lg:block`}
+              >
                 {rabin.summary}
               </p>
               {/* Contact buttons: icon-only and horizontal on mobile, full on lg+ */}
@@ -71,61 +172,63 @@ export default function Home() {
               <div className="flex flex-row gap-4 text-base text-slate-400 mb-6 w-full justify-center lg:hidden">
                 <a
                   href={`mailto:${rabin.contact.email}`}
-                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  className={`flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover}`}
                   title={rabin.contact.email}
                 >
-                  <EnvelopeIcon className="w-5 h-5 text-amber-400" />
+                  <EnvelopeIcon className={`w-5 h-5 ${theme.accent}`} />
                 </a>
                 <a
                   href={`tel:${rabin.contact.phone}`}
-                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  className={`flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover}`}
                   title={rabin.contact.phone}
                 >
-                  <PhoneIcon className="w-5 h-5 text-amber-400" />
+                  <PhoneIcon className={`w-5 h-5 ${theme.accent}`} />
                 </a>
                 <span
-                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-12 h-12 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                  className={`flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-12 h-12 transition-all duration-200 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} cursor-pointer`}
                   title={rabin.contact.location}
                 >
-                  <MapPinIcon className="w-5 h-5 text-amber-400" />
+                  <MapPinIcon className={`w-5 h-5 ${theme.accent}`} />
                 </span>
                 <a
                   href={rabin.contact.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200"
+                  className={`flex items-center justify-center px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-all font-medium text-slate-200 w-12 h-12 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover}`}
                   title={rabin.contact.websiteUrl}
                 >
-                  <GlobeAltIcon className="w-5 h-5 text-amber-400" />
+                  <GlobeAltIcon className={`w-5 h-5 ${theme.accent}`} />
                 </a>
               </div>
               {/* Desktop: original full buttons */}
               <div className="hidden lg:flex flex-wrap gap-4 text-base text-slate-400 mb-6 w-full">
                 <a
                   href={`mailto:${rabin.contact.email}`}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} transition-all font-medium text-slate-200 w-full sm:w-auto`}
                 >
-                  <EnvelopeIcon className="w-5 h-5 text-amber-400" />
+                  <EnvelopeIcon className={`w-5 h-5 ${theme.accent}`} />
                   {rabin.contact.email}
                 </a>
                 <a
                   href={`tel:${rabin.contact.phone}`}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} transition-all font-medium text-slate-200 w-full sm:w-auto`}
                 >
-                  <PhoneIcon className="w-5 h-5 text-amber-400" />
+                  <PhoneIcon className={`w-5 h-5 ${theme.accent}`} />
                   {rabin.contact.phone}
                 </a>
-                <span className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer">
-                  <MapPinIcon className="w-5 h-5 text-amber-400" />
+                <span
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 font-medium text-slate-200 w-full sm:w-auto transition-all duration-200 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} cursor-pointer`}
+                >
+                  <MapPinIcon className={`w-5 h-5 ${theme.accent}`} />
                   {rabin.contact.location}
                 </span>
                 <a
                   href={rabin.contact.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 transition-all font-medium text-slate-200 w-full sm:w-auto"
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} transition-all font-medium text-slate-200 w-full sm:w-auto`}
                 >
-                  <GlobeAltIcon className="w-5 h-5 text-amber-400" />
+                  <GlobeAltIcon className={`w-5 h-5 ${theme.accent}`} />
                   {rabin.contact.websiteUrl.replace(/^https?:\/\//, "")}
                 </a>
               </div>
@@ -135,7 +238,7 @@ export default function Home() {
                   (lang: { name: string; level: string }) => (
                     <span
                       key={lang.name}
-                      className="bg-slate-800/60 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-200 border border-slate-700/50 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                      className={`bg-slate-800/60 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-200 border border-slate-700/50 transition-all duration-200 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} cursor-pointer`}
                     >
                       {lang.name}{" "}
                       <span className="text-slate-400">({lang.level})</span>
@@ -147,7 +250,7 @@ export default function Home() {
                 {rabin.skills.map((skill: string) => (
                   <span
                     key={skill}
-                    className="bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-orange-700/30 hover:border-amber-400 hover:text-amber-200 cursor-pointer"
+                    className={`bg-slate-800/30 backdrop-blur-sm rounded-full px-3 py-1 font-medium text-slate-300 border border-slate-700/40 transition-all duration-200 hover:bg-gradient-to-r ${theme.gradient} ${theme.hover} cursor-pointer`}
                   >
                     {skill}
                   </span>
@@ -162,9 +265,9 @@ export default function Home() {
                   href={`#${section.id}`}
                   className={`transition-colors ${
                     activeSection === section.id
-                      ? "text-amber-400 font-bold"
+                      ? `${theme.accent} font-bold`
                       : "text-slate-300"
-                  } hover:text-amber-400`}
+                  } hover:${theme.accent.replace("text-", "")}`}
                 >
                   {section.label}
                 </a>
@@ -221,7 +324,9 @@ export default function Home() {
               sectionRefs.current["experience"] = el;
             }}
           >
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+            <h2
+              className={`text-3xl font-bold mb-8 bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+            >
               Experience
             </h2>
             <ul className="space-y-8">
@@ -269,7 +374,9 @@ export default function Home() {
               sectionRefs.current["projects"] = el;
             }}
           >
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+            <h2
+              className={`text-3xl font-bold mb-8 bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+            >
               Projects
             </h2>
             <ul className="space-y-8">
@@ -307,7 +414,9 @@ export default function Home() {
               sectionRefs.current["education"] = el;
             }}
           >
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-orange-700 bg-clip-text text-transparent">
+            <h2
+              className={`text-3xl font-bold mb-8 bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+            >
               Education
             </h2>
             <ul className="space-y-8">
@@ -345,7 +454,10 @@ export default function Home() {
                 href="https://figma.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Figma
               </a>{" "}
@@ -354,7 +466,10 @@ export default function Home() {
                 href="https://code.visualstudio.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Visual Studio Code
               </a>{" "}
@@ -366,7 +481,10 @@ export default function Home() {
                 href="https://nextjs.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Next.js
               </a>{" "}
@@ -375,7 +493,10 @@ export default function Home() {
                 href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Tailwind CSS
               </a>
@@ -384,7 +505,10 @@ export default function Home() {
                 href="https://vercel.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Vercel
               </a>
@@ -396,7 +520,10 @@ export default function Home() {
                 href="https://rsms.me/inter/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold hover:text-amber-400"
+                className={`font-bold hover:${theme.accent.replace(
+                  "text-",
+                  ""
+                )}`}
               >
                 Inter
               </a>{" "}
