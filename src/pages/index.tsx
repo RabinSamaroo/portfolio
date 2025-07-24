@@ -72,6 +72,7 @@ export default function Home() {
   const [currentTheme, setCurrentTheme] =
     useState<keyof typeof themes>("amber");
   const [showThemeMenu, setShowThemeMenu] = useState(false);
+  const themeMenuRef = useRef<HTMLDivElement>(null);
   const theme = themes[currentTheme];
 
   // Create dynamic card hover effect with current theme
@@ -97,13 +98,33 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close theme menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        themeMenuRef.current &&
+        !themeMenuRef.current.contains(event.target as Node)
+      ) {
+        setShowThemeMenu(false);
+      }
+    }
+
+    if (showThemeMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showThemeMenu]);
+
   return (
     <div
       className={`min-h-screen flex flex-col font-sans text-lg bg-slate-900 bg-gradient-to-br ${theme.background} via-20% text-slate-100`}
     >
       {/* Theme Selector */}
       <div className="fixed top-4 right-4 z-50">
-        <div className="relative">
+        <div className="relative" ref={themeMenuRef}>
           <button
             onClick={() => setShowThemeMenu(!showThemeMenu)}
             className={`flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/80 backdrop-blur-lg border border-slate-700/50 ${theme.hover} transition-all duration-200 shadow-lg`}
