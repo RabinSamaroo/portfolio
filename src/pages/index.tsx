@@ -432,17 +432,19 @@ export default function Home() {
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
                   <div
-                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}
+                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover}`}
                   >
                     {proj.imagePath && (
-                      <img
-                        src={proj.imagePath}
-                        alt={proj.name}
-                        className="w-20 h-20 object-cover rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
-                      />
+                      <div className="w-1/3 h-48 flex-shrink-0">
+                        <img
+                          src={proj.imagePath}
+                          alt={proj.name}
+                          className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                        />
+                      </div>
                     )}
-                    <div>
-                      <div className="font-semibold text-slate-100">
+                    <div className="p-8 flex flex-col justify-center flex-1">
+                      <div className="font-semibold text-slate-100 mb-2">
                         {proj.name}
                       </div>
                       <div className="text-sm text-slate-300">
