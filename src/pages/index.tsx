@@ -127,7 +127,7 @@ export default function Home() {
         <div className="relative" ref={themeMenuRef}>
           <button
             onClick={() => setShowThemeMenu(!showThemeMenu)}
-            className={`flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/80 backdrop-blur-lg border border-slate-700/50 ${theme.hover} transition-all duration-200 shadow-lg`}
+            className={`flex cursor-pointer items-center justify-center w-12 h-12 rounded-full bg-slate-800/80 backdrop-blur-lg border border-slate-700/50 ${theme.hover} transition-all duration-200 shadow-lg`}
             title="Change color theme"
           >
             <PaintBrushIcon className={`w-5 h-5 ${theme.accent}`} />
@@ -141,7 +141,7 @@ export default function Home() {
                     setCurrentTheme(key as keyof typeof themes);
                     setShowThemeMenu(false);
                   }}
-                  className={`w-full text-left px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
+                  className={`w-full cursor-pointer text-left px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
                     currentTheme === key
                       ? `bg-gradient-to-r ${themeOption.primary} text-white`
                       : `hover:bg-slate-700/50 text-slate-200 hover:${themeOption.border.replace(
