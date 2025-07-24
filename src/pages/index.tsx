@@ -17,7 +17,6 @@ const sections = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
 ];
 
 // Color themes
@@ -474,21 +473,30 @@ export default function Home() {
               {rabin.educations?.map((edu: any) => (
                 <li key={edu.school + edu.achievement}>
                   <div
-                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl p-8 flex gap-6 items-center text-xl ${cardHover}`}
+                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden p-8 text-xl ${cardHover}`}
                   >
-                    {edu.imagePath && (
-                      <img
-                        src={edu.imagePath}
-                        alt={edu.school}
-                        className="w-14 h-14 object-contain rounded-xl bg-slate-800/60 p-3 border border-slate-700/50 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
-                      />
-                    )}
-                    <div>
-                      <div className="font-semibold text-slate-100">
-                        {edu.school}
-                      </div>
-                      <div className="text-sm text-slate-400">
-                        {edu.achievement} ({edu.endDate})
+                    <div className="flex items-start gap-6">
+                      {edu.imagePath && (
+                        <div className="w-32 h-32 flex-shrink-0 rounded-lg p-2 flex items-center justify-center">
+                          <img
+                            src={edu.imagePath}
+                            alt={edu.school}
+                            className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-col justify-center flex-1">
+                        <div className="font-semibold text-slate-100 mb-1">
+                          {edu.school}
+                        </div>
+                        <div className="text-sm text-slate-400 mb-3">
+                          {edu.achievement} ({edu.endDate})
+                        </div>
+                        {edu.description && (
+                          <div className="text-sm text-slate-300">
+                            {edu.description}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

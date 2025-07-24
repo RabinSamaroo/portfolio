@@ -91,10 +91,12 @@ const rabin = {
   ],
   educations: [
     {
-      school: "Ryerson University",
+      school: "Toronto Metropolitan University",
       achievement: "Honours Bachelor of Science, Computer Science",
       endDate: "2022",
-      imagePath: "",
+      description:
+        "Focused on software engineering principles, data structures, algorithms, and systems design. Gained extensive experience in object-oriented programming, database management, and software development methodologies. Completed capstone project in distributed systems architecture.",
+      imagePath: "/TMU-rgb.png",
     },
   ],
   projects: [
