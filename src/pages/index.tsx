@@ -451,27 +451,54 @@ export default function Home() {
             <ul className="space-y-8">
               {rabin.projects?.map((proj: any) => (
                 <li key={proj.name}>
-                  <div
-                    className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover}`}
-                  >
-                    {proj.imagePath && (
-                      <div className="w-1/3 flex-shrink-0">
-                        <img
-                          src={proj.imagePath}
-                          alt={proj.name}
-                          className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
-                        />
+                  {proj.url ? (
+                    <a
+                      href={proj.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover} cursor-pointer block`}
+                    >
+                      {proj.imagePath && (
+                        <div className="w-1/3 flex-shrink-0">
+                          <img
+                            src={proj.imagePath}
+                            alt={proj.name}
+                            className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
+                      <div className="p-8 flex flex-col justify-center flex-1">
+                        <div className="font-semibold text-slate-100 mb-2">
+                          {proj.name}
+                        </div>
+                        <div className="text-sm text-slate-300">
+                          {proj.description}
+                        </div>
                       </div>
-                    )}
-                    <div className="p-8 flex flex-col justify-center flex-1">
-                      <div className="font-semibold text-slate-100 mb-2">
-                        {proj.name}
-                      </div>
-                      <div className="text-sm text-slate-300">
-                        {proj.description}
+                    </a>
+                  ) : (
+                    <div
+                      className={`group bg-slate-800/40 backdrop-blur-lg border border-slate-700/40 rounded-2xl overflow-hidden flex text-xl ${cardHover}`}
+                    >
+                      {proj.imagePath && (
+                        <div className="w-1/3 flex-shrink-0">
+                          <img
+                            src={proj.imagePath}
+                            alt={proj.name}
+                            className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
+                      <div className="p-8 flex flex-col justify-center flex-1">
+                        <div className="font-semibold text-slate-100 mb-2">
+                          {proj.name}
+                        </div>
+                        <div className="text-sm text-slate-300">
+                          {proj.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </li>
               ))}
             </ul>

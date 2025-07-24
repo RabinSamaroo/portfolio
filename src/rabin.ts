@@ -112,16 +112,74 @@ const rabin = {
   ],
   projects: [
     {
+      name: "L3 Resources",
+      description:
+        "Developed a comprehensive oil & gas mineral rights acquisition platform for L3 Resources, powering runsheet.com - an innovative platform that helps landmen create detailed runsheets and streamline mineral rights research. Built modern full-stack infrastructure handling complex land data workflows, automated document processing, and secure client management systems with robust web scraping capabilities and advanced data extraction pipelines.",
+      imagePath:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://www.l3resources.com/",
+    },
+    {
+      name: "Runsheet.com",
+      description:
+        "Architected an innovative SaaS platform specifically designed for landmen in the oil & gas industry to create detailed runsheets and streamline mineral rights research. Built with React and TypeScript, featuring advanced mapping integrations, automated land data analysis, collaborative workflow tools, and comprehensive reporting systems that revolutionize how energy professionals manage property research and due diligence processes.",
+      imagePath:
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://www.runsheet.com/login",
+    },
+    {
+      name: "MyKeeper Digital Memorial Platform",
+      description:
+        "Architected and developed a comprehensive digital memorialization platform serving millions of users globally. Built scalable React and Python infrastructure supporting unlimited content uploads, virtual memorial services, and collaborative tribute features with advanced privacy controls and 508-compliant accessibility standards.",
+      imagePath:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://www.mykeeper.com/",
+    },
+    {
+      name: "Veteran Legacy Memorial (VLM)",
+      description:
+        "Spearheaded development of the U.S. Department of Veterans Affairs' official memorial platform deployed on AWS GovCloud. Engineered secure, government-compliant memorial profiles for fallen veterans with advanced multimedia support, legacy preservation features, and family collaboration tools meeting federal accessibility and security standards.",
+      imagePath:
+        "https://images.unsplash.com/photo-1544982503-9f984c14501a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://www.vlm.cem.va.gov/ROBERTWAYNEMONROE/9c3b2b",
+    },
+    {
       name: "Canada's Top 100 Employers Platform",
       description:
         "Engineered a comprehensive employer recognition platform serving Canada's premier workplace awards program. Built scalable web infrastructure supporting thousands of employer applications, advanced search and filtering systems, and automated content management workflows for multiple award categories.",
       imagePath: "https://static.eluta.ca/logos/2025_7_reverse_en.svg",
+      url: "https://www.canadastop100.com/",
     },
     {
       name: "Eluta.ca Job Search Engine",
       description:
         "Developed a comprehensive job search platform using full-stack Python architecture with extensive web scraping infrastructure. Implemented automated data collection systems processing thousands of job postings daily from multiple sources, advanced search algorithms, and real-time job aggregation pipelines with robust error handling and data validation.",
       imagePath: "https://www.eluta.ca/++resource++img/eluta_homepage_logo.png",
+      url: "https://www.eluta.ca/",
+    },
+    {
+      name: "Find Me Food",
+      description:
+        "Built an innovative Tinder-style food discovery app using Next.js and Tailwind CSS, deployed on Firebase. Features swipe-based restaurant recommendations, location-based food discovery, and intuitive mobile-first design with real-time filtering and personalized matching algorithms for local dining experiences.",
+      imagePath:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://find-me-food-db1b1.web.app/",
+    },
+    {
+      name: "New Tech Solutions",
+      description:
+        "Developed a comprehensive business solutions website using Bootstrap and jQuery, showcasing modern web development practices with responsive design principles. Built during tenure at New Technologies Enterprises Inc., featuring dynamic user interfaces, cross-browser compatibility, and optimized performance for diverse client requirements across multiple business verticals.",
+      imagePath:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "http://newtechsolutions.com/",
+    },
+    {
+      name: "TalkDeath",
+      description:
+        "Developed and maintained TalkDeath.com using WordPress, creating a comprehensive digital platform dedicated to death education and end-of-life conversations. Built custom WordPress themes and plugins to support educational content delivery, community engagement features, and resource management systems. Implemented responsive design patterns, SEO optimization, and accessibility standards to create an informative platform that facilitates important discussions around mortality, grief, and death literacy.",
+      imagePath:
+        "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://talkdeath.com/",
     },
   ],
 };
