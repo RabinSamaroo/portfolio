@@ -307,51 +307,51 @@ export default function Home() {
           >
             <div className="p-8 text-xl text-slate-200">
               <span className={`${theme.accent} font-semibold`}>
-                Senior Full-Stack Developer
+                Senior Full-Stack Engineer and Technical Lead
               </span>{" "}
               with{" "}
               <span className={`${theme.accent} font-semibold`}>
-                5+ years of experience
+                over 6 years of experience
               </span>{" "}
-              leading{" "}
+              architecting{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                scalable web applications
+              </span>{" "}
+              and leading{" "}
               <span className={`${theme.accent} font-semibold`}>
                 high-performance teams
-              </span>{" "}
-              and architecting{" "}
-              <span className={`${theme.accent} font-semibold`}>
-                scalable enterprise solutions
               </span>
-              . Proven track record of delivering{" "}
+              . Specialized in the{" "}
               <span className={`${theme.accent} font-semibold`}>
-                mission-critical applications
+                React ecosystem (Next.js, TypeScript)
+              </span>{" "}
+              and{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                cloud-native architectures
+              </span>
+              . Proven track record of{" "}
+              <span className={`${theme.accent} font-semibold`}>
+                migrating legacy systems
               </span>
               , optimizing{" "}
               <span className={`${theme.accent} font-semibold`}>
-                system performance
+                frontend performance
               </span>
-              , and driving{" "}
+              , and establishing{" "}
               <span className={`${theme.accent} font-semibold`}>
-                technical innovation
+                engineering best practices
               </span>
-              . Expertise in modern{" "}
+              . Passionate about{" "}
               <span className={`${theme.accent} font-semibold`}>
-                JavaScript/TypeScript ecosystems
+                mentorship
               </span>
               ,{" "}
               <span className={`${theme.accent} font-semibold`}>
-                cloud infrastructure
+                code quality
               </span>
-              , and{" "}
+              , and delivering{" "}
               <span className={`${theme.accent} font-semibold`}>
-                agile methodologies
-              </span>{" "}
-              with a passion for{" "}
-              <span className={`${theme.accent} font-semibold`}>
-                mentoring developers
-              </span>{" "}
-              and building{" "}
-              <span className={`${theme.accent} font-semibold`}>
-                robust, maintainable codebases
+                user-centric enterprise solutions
               </span>
               .
             </div>
