@@ -58,6 +58,7 @@ const rabin = {
       position: "Senior Full-Stack Developer",
       startDate: "Jan 2025",
       endDate: "Present",
+      location: "Houston, TX",
       description: [
         "Spearheaded the modernization of a large-scale internal application, leading the migration from Angular to React while maintaining legacy system interoperability.",
         "Architected and developed scalable backend services using C#, ASP.NET Core",
@@ -72,6 +73,7 @@ const rabin = {
       position: "Lead Developer",
       startDate: "Dec 2023",
       endDate: "Jan 2025",
+      location: "Houston, TX",
       description: [
         "Architected a modern full-stack application to deliver oil and natural gas information to land men.",
         "Implemented systems to deploy and monitor parallel web scraping tasks in Python and Typescript.",
@@ -87,6 +89,8 @@ const rabin = {
       position: "Lead Developer",
       startDate: "Apr 2022",
       endDate: "Nov 2023",
+
+      location: "Toronto, Ontario, Canada",
       description: [
         "Spearheaded the development of the Veteran Legacy Memorials project using React and Python.",
         "Architected and deployed solutions on AWS GovCloud, leveraging AWS Cloud Functions for optimized backend processing.",
@@ -103,6 +107,7 @@ const rabin = {
       position: "Senior Full-Stack Developer",
       startDate: "Apr 2022",
       endDate: "Nov 2023",
+      location: "Toronto, Ontario, Canada",
       description: [
         "Engineered a pre-production enterprise digital memorialization platform, meeting industry standards and best practices.",
         "Pioneered the use of modern testing methodologies using Playwright, ensuring robust software quality.",
@@ -121,6 +126,7 @@ const rabin = {
       position: "Full Stack Developer",
       startDate: "Mar 2021",
       endDate: "Apr 2022",
+      location: "Toronto, Ontario, Canada",
       description: [
         "Thrived in a fast-paced setting, juggling multiple projects with diverse requirements.",
         "Architected and deployed modern user interfaces using TypeScript and React, ensuring responsive and intuitive experiences.",
@@ -140,6 +146,7 @@ const rabin = {
       position: "Back End Developer",
       startDate: "Nov 2018",
       endDate: "Mar 2021",
+      location: "Toronto, Ontario, Canada",
       description: [
         "Developed web scrapers with TypeScript, targeting both raw pages and APIs.",
         "Contributed to a PostgreSQL migration; revamped 25% of the queries for optimization.",
