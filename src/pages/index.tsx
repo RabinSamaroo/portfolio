@@ -1,4 +1,5 @@
-import rabin from "../rabin";
+import rabinData from "../rabin";
+import { GetServerSideProps } from "next";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -63,7 +64,20 @@ const themes = {
   },
 };
 
-export default function Home() {
+type HomeProps = {
+  rabin: typeof rabinData;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  // In a real app, fetch data here (e.g., from DB or API)
+  return {
+    props: {
+      rabin: rabinData,
+    },
+  };
+};
+
+export default function Home({ rabin }: HomeProps) {
   // Track which section is currently in view
   const [activeSection, setActiveSection] = useState(sections[0].id);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
