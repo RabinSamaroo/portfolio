@@ -196,11 +196,11 @@ export default function Home({ rabin }: HomeProps) {
             </h2>
             {/* About Section in Head */}
             <div className="mb-10 w-full">
-              <p
+              {/* <p
                 className={`text-lg leading-relaxed mb-6 text-slate-200 border-l-4 ${theme.border} pl-4 italic hidden lg:block`}
               >
                 {rabin.quote}
-              </p>
+              </p> */}
               {/* Contact buttons: icon-only and horizontal on mobile, full on lg+ */}
               {/* Mobile: icon-only, horizontal */}
               <div className="flex flex-row gap-4 text-base text-slate-400 mb-6 w-full justify-center lg:hidden">
@@ -292,7 +292,7 @@ export default function Home({ rabin }: HomeProps) {
               </div>
             </div>
             {/* Nav only on large screens */}
-            <nav className="hidden lg:flex gap-8 mb-14 lg:mb-0 text-xl font-medium">
+            {/* <nav className="hidden lg:flex gap-8 mb-14 lg:mb-0 text-xl font-medium">
               {sections.map((section) => (
                 <a
                   key={section.id}
@@ -306,7 +306,7 @@ export default function Home({ rabin }: HomeProps) {
                   {section.label}
                 </a>
               ))}
-            </nav>
+            </nav> */}
           </div>
         </aside>
         {/* Main content (right half on large screens) */}
