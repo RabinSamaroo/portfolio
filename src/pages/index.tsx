@@ -146,7 +146,7 @@ export default function Home() {
                       ? `bg-gradient-to-r ${themeOption.primary} text-white`
                       : `hover:bg-slate-700/50 text-slate-200 hover:${themeOption.border.replace(
                           "border-",
-                          "text-"
+                          "text-",
                         )}`
                   }`}
                 >
@@ -263,7 +263,7 @@ export default function Home() {
                       {lang.name}{" "}
                       <span className="text-slate-400">({lang.level})</span>
                     </span>
-                  )
+                  ),
                 )}
               </div>
               <div className="hidden lg:flex flex-wrap gap-2 text-xs mb-6">
@@ -369,7 +369,7 @@ export default function Home() {
                       {lang.name}{" "}
                       <span className="text-slate-400">({lang.level})</span>
                     </span>
-                  )
+                  ),
                 )}
               </div>
               <div className="flex flex-wrap gap-2 text-xs mb-6">
@@ -422,11 +422,9 @@ export default function Home() {
                         {exp.startDate} – {exp.endDate} | {exp.location}
                       </div>
                       <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
-                        {exp.description
-                          .split("\n")
-                          .map((point: string, idx: number) => (
-                            <li key={idx}>{point}</li>
-                          ))}
+                        {exp.description.map((point: string, idx: number) => (
+                          <li key={idx}>{point}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -563,7 +561,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`font-bold hover:${theme.accent.replace(
                   "text-",
-                  ""
+                  "",
                 )}`}
               >
                 Figma
@@ -575,7 +573,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`font-bold hover:${theme.accent.replace(
                   "text-",
-                  ""
+                  "",
                 )}`}
               >
                 Visual Studio Code
@@ -590,7 +588,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`font-bold hover:${theme.accent.replace(
                   "text-",
-                  ""
+                  "",
                 )}`}
               >
                 Next.js
@@ -602,7 +600,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`font-bold hover:${theme.accent.replace(
                   "text-",
-                  ""
+                  "",
                 )}`}
               >
                 Tailwind CSS
@@ -614,7 +612,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`font-bold hover:${theme.accent.replace(
                   "text-",
-                  ""
+                  "",
                 )}`}
               >
                 Vercel
